@@ -1,0 +1,183 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  padding: 1rem;
+  background-color: var(--base100);
+}
+
+.hero_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 4rem;
+  overflow: hidden;
+}
+
+.hero_img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.5);
+  will-change: transform;
+
+}
+
+.hero_img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--base100);
+  /* opacity: 0.35; */
+  opacity: 0;
+}
+
+.hero_content {
+  position: absolute;
+  width: 100%;
+  padding: 2rem;
+  color: var(--base300);
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h1 {
+  font-size: 12rem;
+  font-weight: 600;
+  letter-spacing: -0.25rem;
+  line-height: 1;
+  color: #dba976;
+}
+
+.hero_footer {
+  color: var(--base300);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero_footer h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.1;
+  width: 30%;
+}
+
+.hero_footer p {
+  text-align: right;
+  opacity: 0.8;
+  width: 30%;
+  font-size: 1rem;
+}
+
+.btn_wrapper {
+  padding-top: 2rem;
+  display: flex;
+  gap: 40px;
+}
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  scale: 0;
+  will-change: transform;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--base300);
+  padding: 1rem 1rem;
+  border-radius: 4rem;
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.btn div {
+  position: relative;
+  z-index: 1;
+}
+
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dba976;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover::after {
+  transform: translateY(0);
+}
+
+.btn_label {
+  position: relative;
+  will-change: transform;
+}
+
+.btn_circle {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--base100);
+  border-radius: 50%;
+  color: #fff;
+  will-change: transform;
+}
+
+@media (max-width: 800px) {
+  .hero_inner {
+    border-radius: 3rem;
+  }
+
+  .header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    font-size: 4rem;
+  }
+
+  .menu_btn {
+    position: absolute;
+    top: calc(50% + 5rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .btn {
+    height: 2rem;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .btn_circle {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .btn svg {
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  .hero_footer p,
+  .hero_footer h2 {
+    width: 45%;
+  }
+}
